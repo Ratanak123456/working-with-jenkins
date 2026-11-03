@@ -1,0 +1,11 @@
+services:
+  web:
+    image: spring-cafe:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: web-01
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    restart: unless-stopped
+    init: true
